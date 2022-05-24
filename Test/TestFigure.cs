@@ -12,10 +12,10 @@ public class TestFigure
         // Act
 
         var figure = (Figure)triangle;
-        var ValueArea= figure.Area();
+        var valueArea= figure.Area();
 
         // Assert
-        Assert.Equal(6, ValueArea);
+        Assert.Equal(6, valueArea);
     }
 
     [Fact]
@@ -26,10 +26,10 @@ public class TestFigure
 
         // Act
         var figure = (Figure)circle;
-        var ValueArea = figure.Area();
+        var valueArea = figure.Area();
 
         // Assert
-        Assert.Equal(Math.PI*25, ValueArea);
+        Assert.Equal(Math.PI*25, valueArea);
     }
 
     [Fact]
