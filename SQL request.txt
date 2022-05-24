@@ -1,5 +1,6 @@
-SELECT Product.Name, Category.Name
-FROM Product
-LEFT JOIN Category
-ON Product.Id = Category.Id;
-	
+SELECT pr."Name", c."Name" 
+FROM (SELECT * FROM "CategoriesProducts" AS cp
+    RIGHT JOIN "Products" as p
+    ON cp."ProductId" = p."Id") AS pr
+LEFT JOIN "Categories" AS c
+ON pr."CategoryId" = c."Id";
