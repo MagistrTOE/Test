@@ -1,0 +1,5 @@
+SELECT Product.Name, Category.Name
+FROM Product
+LEFT JOIN Category
+ON Product.Id = Category.Id;
+	
