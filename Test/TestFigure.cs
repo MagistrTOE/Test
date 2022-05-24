@@ -7,52 +7,55 @@ public class TestFigure
     public void TestMethodBySquareTriangle()
     {
         // Arrange
-        var figure = new Figure(3, 4, 5);
+        var triangle = new Triangle(3, 4, 5);
 
         // Act
-        var Square = figure.AreaFigure();
+
+        var figure = (Figure)triangle;
+        var ValueArea= figure.Area();
 
         // Assert
-        Assert.Equal(6, Square);
+        Assert.Equal(6, ValueArea);
     }
 
     [Fact]
     public void TestMethodBySquareCircle()
     {
         // Arrange
-        var figure = new Figure(5);
+        var circle = new Circle(5);
 
         // Act
-        var Square = figure.AreaFigure();
+        var figure = (Figure)circle;
+        var ValueArea = figure.Area();
 
         // Assert
-        Assert.Equal(Math.PI*25, Square);
+        Assert.Equal(Math.PI*25, ValueArea);
     }
 
     [Fact]
-    public void TestMethodByInfoTriangle()
+    public void TestMethodByIsRectangular1()
     {
         // Arrange
-        var figure = new Figure(3, 4, 5);
+        var triangle = new Triangle(3, 4, 5);
 
         // Act
-        var info = figure.InfoFigure();
+        var info = triangle.IsRectangular();
 
         // Assert
-        Assert.Equal("Вид фигуры: Triangle, Прямоугольный: True", info);
+        Assert.True(info);
     }
 
     [Fact]
-    public void TestMethodByInfoCircle()
+    public void TestMethodByIsRectangular2()
     {
         // Arrange
-        var figure = new Figure(10);
+        var triangle = new Triangle(5, 5, 5);
 
         // Act
-        var info = figure.InfoFigure();
+        var info = triangle.IsRectangular();
 
         // Assert
-        Assert.Equal("Вид фигуры: Circle", info);
+        Assert.False(info);
     }
 }
 

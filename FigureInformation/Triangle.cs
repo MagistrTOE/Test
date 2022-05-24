@@ -1,33 +1,33 @@
 ﻿namespace FigureInformation
 {
-    internal class Triangle : IFigure
+    public class Triangle : Figure
     {
-        public double A { get; set; }
-        public double B { get; set; }
-        public double C { get; set; }
+        public double a { get; private set; }
+        public double b { get; private set; }
+        public double c { get; private set; }
 
         public Triangle(double a, double b, double c)
         {
-            A = a; B = b; C = c; 
+            this.a = a;
+            this.b = b;
+            this.c = c;
         }
 
-        public double Area()
+        public override double Area()
         {
-            double p = (A + B + C) / 2;
+            double p = (a + b + c) / 2;
             
-            return Math.Sqrt(p * (p - A) * (p - B) * (p - C));
+            return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
         }
 
-        public string Info()
+        public bool IsRectangular()
         {
-            bool Form = false;
-            
-            if ((A * A == B * B + C * C)||
-                (B * B == A * A + C * C)||
-                (C * C == A * A + B * B))
-                Form = true;
+            if ((a * a == b * b + c * c) ||
+                (b * b == a * a + c * c) ||
+                (c * c == a * a + b * b))
+                return true;
 
-            return $"Вид фигуры: {nameof(Triangle)}, Прямоугольный: {Form}";
+            return false;
         }
     }
 }

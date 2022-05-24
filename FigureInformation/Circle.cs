@@ -1,22 +1,17 @@
 ﻿namespace FigureInformation
 {
-    internal class Circle : IFigure
+    public class Circle : Figure
     {
-        public double R { get; set; }
+        public double r { get; private set; }
 
         public Circle(double radius)
         {
-            R = radius;
+            r = radius;
         }
 
-        public double Area()
+        public override double Area()
         {
-            return Math.PI * R * R;
-        }
-
-        public string Info()
-        {
-            return $"Вид фигуры: {nameof(Circle)}";
+            return Math.PI * r * r;
         }
     }
 }
